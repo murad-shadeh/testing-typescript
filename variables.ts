@@ -5,3 +5,10 @@ let isRaining: boolean = false;
 //TypeScript inference
 let x = 27;
 x = "murad";
+
+let thing: any = "hello";
+thing = 42;
+thing = true;
+thing = [];
+thing();
+thing.toUpperCase();
