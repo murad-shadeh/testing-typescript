@@ -12,3 +12,13 @@ thing = true;
 thing = [];
 thing();
 thing.toUpperCase();
+
+const movies = ["The Matrix", "Inception", "Interstellar", "The Dark Knight"];
+// TypeScript infere to this variable as any since we didn't give it a value
+// let foundMovie;
+let foundMovie: string;
+for (let movie of movies) {
+  if (movie === "Inception") {
+    foundMovie = movie;
+  }
+}
