@@ -3,13 +3,20 @@ function square(num: number) {
 }
 square(3);
 // square(true); this is wrong
-function greet(person: string) {
-  return `Hello, ${person}!`;
-}
-greet("Murad");
+// function greet(person: string) {
+//   return `Hello, ${person}!`;
+// }
+// greet("Murad");
 
 // trying arrow function
 const doSomething = (person: string, age: number, isFunny: boolean) => {
   return `Hello, ${person}. You are ${age} years old, and are you Funny? ${isFunny}`;
 };
 doSomething("Murad", 25, true);
+
+// working with default parameters
+// we gave a default value to person parameter ... no need to pass any value for the function or we can if we need something else
+function greet(person: string = "stranger") {
+  return `Hello, ${person}!`;
+}
+greet();
