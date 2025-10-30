@@ -41,3 +41,9 @@ colors.map((color: string): string => {
 });
 
 // console.log(colors);
+
+// A function that doesn't return anything (void)
+const logMessage = (message: string): void => {
+  console.log(message);
+};
+logMessage("Hello, World!");
