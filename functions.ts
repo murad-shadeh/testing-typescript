@@ -33,3 +33,11 @@ function random(num: number) {
   }
   return num;
 }
+
+// Anonymous function contextual typing
+const colors = ["red", "green", "blue"];
+colors.map((color: string): string => {
+  return color.toUpperCase();
+});
+
+// console.log(colors);
