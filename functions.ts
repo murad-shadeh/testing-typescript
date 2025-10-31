@@ -47,3 +47,16 @@ const logMessage = (message: string): void => {
   console.log(message);
 };
 logMessage("Hello, World!");
+
+// The never type of return
+const throwError = (message: string): never => {
+  throw new Error(message);
+};
+// throwError("This is an error!");
+
+// or it never stops executing
+const infiniteLoop = (): never => {
+  while (true) {
+    console.log("Looping forever...");
+  }
+};
