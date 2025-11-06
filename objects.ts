@@ -12,19 +12,44 @@ printName({ first: "Murad", last: "Pro" });
 //   return { x: Math.random(), y: Math.random() };
 // }
 
-printName({ first: "Mick", last: "Jagger", age: "24" }); // typeScript doesn't allow this because of excess property checking
-// but if we put this in a variable => TypeScript will allow it becuase it checks only the required properties and ignores the rest
-const singer = { first: "Mick", last: "Jagger", age: 24 };
-printName(singer);
+// printName({ first: "Mick", last: "Jagger", age: "24" }); // typeScript doesn't allow this because of excess property checking
+// // but if we put this in a variable => TypeScript will allow it becuase it checks only the required properties and ignores the rest
+// const singer = { first: "Mick", last: "Jagger", age: 24 };
+// printName(singer);
 
-// Type aliases.
-type Point = { x: number; y: number };
-// I can use this instead of writing the whole object pattern again and again
-let coordinate: Point = { x: 34, y: 2 };
-function randomCoordinate(): Point {
-  return { x: Math.random(), y: Math.random() };
+// // Type aliases.
+// type Point = { x: number; y: number };
+// // I can use this instead of writing the whole object pattern again and again
+// let coordinate: Point = { x: 34, y: 2 };
+// function randomCoordinate(): Point {
+//   return { x: Math.random(), y: Math.random() };
+// }
+// // Now it accepts a point as an parameter and returns a point
+// function doublePoint(point: Point): Point {
+//   return { x: point.x * 2, y: point.y * 2 };
+// }
+
+// Nested objects
+type Song = {
+  title: string;
+  artist: string;
+  numStreams: number;
+  credits: { producer: string; writer: string };
+};
+// passing this object
+const mySong: Song = {
+  title: "Unchained Melody",
+  artist: "The Righteous Brothers",
+  numStreams: 123456789,
+  credits: { producer: "Phil Spector", writer: "Alex North" },
+};
+function calculatePayout(song: Song): number {
+  return song.numStreams * 0.0033;
 }
-// Now it accepts a point as an parameter and returns a point
-function doublePoint(point: Point): Point {
-  return { x: point.x * 2, y: point.y * 2 };
+function printSong(song: Song): void {
+  console.log(`${song.title} - ${song.artist}`);
 }
+const earnings = calculatePayout(mySong);
+console.log(earnings);
+const prinitng = printSong(mySong);
+console.log(prinitng);
