@@ -53,3 +53,6 @@ const earnings = calculatePayout(mySong);
 console.log(earnings);
 const prinitng = printSong(mySong);
 console.log(prinitng);
+// Optional properties
+type Point = { x: number; y: number; z?: number };
+const myPoint: Point = { x: 1, y: 2 }; // if we put z or not ts won't complain
