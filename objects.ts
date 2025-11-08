@@ -56,3 +56,14 @@ console.log(prinitng);
 // Optional properties
 type Point = { x: number; y: number; z?: number };
 const myPoint: Point = { x: 1, y: 2 }; // if we put z or not ts won't complain
+
+// readonly modifier in TypeScript
+type User = {
+  readonly id: number;
+  username: string;
+};
+
+const user: User = { id: 12345, username: "muradpro" };
+console.log(user.id);
+//but if we try to change the id it will give an error
+user.id = 33; // Error: Cannot assign to 'id' because it is a read-only property
