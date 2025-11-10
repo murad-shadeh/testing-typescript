@@ -67,3 +67,26 @@ const user: User = { id: 12345, username: "muradpro" };
 console.log(user.id);
 //but if we try to change the id it will give an error
 user.id = 33; // Error: Cannot assign to 'id' because it is a read-only property
+
+// Intersection Type
+type Circle = {
+  radius: number;
+};
+type Colorful = {
+  color: string;
+};
+type ColorfulCircle = Circle & Colorful;
+const happyFace: ColorfulCircle = { radius: 4, color: "yellow" };
+
+type Cat = {
+  numLives: number;
+};
+type Dog = {
+  breed: string;
+};
+// adding more type inline
+type CatDog = Cat &
+  Dog & {
+    age: number;
+  };
+const christy: CatDog = { numLives: 7, breed: "Husky", age: 5 };
