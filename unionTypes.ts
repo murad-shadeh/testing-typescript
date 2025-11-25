@@ -31,3 +31,13 @@ function calculateTax(price: number | string, tax: number): number {
     return price * tax;
   }
 }
+// union types with arrays
+// const stuff: any[] = [1, "hello", true, { x: 10 }];
+
+// this is better
+// const stuff: (number | string)[] = [1, "hello", 2, "world"];
+// if I put a string in the array it will give an error, cuz either all string or all number
+const stuff: number[] | string[] = [1, 2, 3];
+const coords: (Point | Loc)[] = [];
+coords.push({ x: 10, y: 20 });
+coords.push({ lat: 40.7128, long: -74.006 });
