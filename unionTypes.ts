@@ -41,3 +41,21 @@ const stuff: number[] | string[] = [1, 2, 3];
 const coords: (Point | Loc)[] = [];
 coords.push({ x: 10, y: 20 });
 coords.push({ lat: 40.7128, long: -74.006 });
+
+// Literal types (the literal value is the type)
+let zero: 0 = 0;
+// zero = 2; // Error
+let mood: "happy" | "sad" = "happy";
+mood = "sad";
+// mood = "meow"; // Error
+
+type DayOfWeek =
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday"
+  | "Sunday";
+
+let today: DayOfWeek = "Monday";
