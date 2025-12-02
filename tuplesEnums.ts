@@ -13,3 +13,16 @@ goodRes.push("New Value"); // valid
 goodRes.pop(); // valid
 // tuples are not necessary to use
 const responses: HTTPResponse[] = [[404, "Not Found"]];
+// Introducing enums
+enum OrderStatus {
+  // THEY START AT 0 BY DEFAULT
+  PENDING,
+  SHIPPED,
+  DELIVERED,
+  RETURNED,
+}
+const myStatus = OrderStatus.DELIVERED;
+function isDelivered(status: OrderStatus): boolean {
+  return status === OrderStatus.DELIVERED;
+}
+isDelivered(OrderStatus.RETURNED); // true
