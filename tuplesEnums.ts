@@ -16,6 +16,7 @@ const responses: HTTPResponse[] = [[404, "Not Found"]];
 // Introducing enums
 enum OrderStatus {
   // THEY START AT 0 BY DEFAULT
+  // we can give them values
   PENDING,
   SHIPPED,
   DELIVERED,
@@ -26,3 +27,12 @@ function isDelivered(status: OrderStatus): boolean {
   return status === OrderStatus.DELIVERED;
 }
 isDelivered(OrderStatus.RETURNED); // true
+// More on enums
+enum ArrowKeys {
+  UP = "up",
+  DOWN = "down",
+  LEFT = "left",
+  RIGHT = "right",
+}
+// in imple terms => enums are set of name we can refer back to.
+// ---------------------------------------------------------------
