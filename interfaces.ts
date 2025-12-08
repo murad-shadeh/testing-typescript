@@ -5,13 +5,23 @@ interface Point {
 }
 
 const pt: Point = { x: 10, y: 20 };
-// readonly and optional interface properties
+// readonly and optional interface properties and interface methods
 interface Person {
   readonly id: number;
   first: string;
   last: string;
-  age?: number; // optional property
+  nickname?: string; // optional property
+  //sayhi to be a method and returns a string
+  sayHi: () => string;
 }
-const thomas: Person = { first: "Thomas", last: "Hardy", id: 12345 };
+const thomas: Person = {
+  first: "Thomas",
+  last: "Hardy",
+  nickname: "Tom",
+  id: 12345,
+  sayHi: () => {
+    return "Hello!";
+  },
+};
 thomas.first = "Tom";
 // thomas.id = 54321; // Error: cannot reassign a readonly property
