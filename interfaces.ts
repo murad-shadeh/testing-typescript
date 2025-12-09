@@ -25,3 +25,18 @@ const thomas: Person = {
 };
 thomas.first = "Tom";
 // thomas.id = 54321; // Error: cannot reassign a readonly property
+
+// interface method parameters
+interface Product {
+  name: string;
+  price: number;
+  applyDiscount(discount: number): number; // method with parameter
+}
+const shoes: Product = {
+  name: "Adidas",
+  price: 100,
+  applyDiscount(amount: number) {
+    return this.price - this.price * amount;
+  },
+};
+console.log(shoes.applyDiscount(0.3));
