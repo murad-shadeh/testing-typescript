@@ -40,3 +40,24 @@ const shoes: Product = {
   },
 };
 console.log(shoes.applyDiscount(0.3));
+// Reopening interfaces
+// writing type aliases with one property and then doing it again with another will not combine and will throw an error
+// on the other hand, interfaces can be reopened and extended in the same above scenario. Citical difference!
+interface Dog {
+  name: string;
+  age: number;
+}
+
+interface Dog {
+  breed: string;
+  bark(): string;
+}
+
+const elton: Dog = {
+  name: "Elton",
+  age: 0.5,
+  breed: "Australian Shepherd",
+  bark: () => {
+    return "Woof woof!";
+  },
+};
