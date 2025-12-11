@@ -75,3 +75,22 @@ const chewy: ServiceDog = {
   },
   job: "guide dog",
 };
+// interface multiple inheritance
+interface Personnel {
+  name: string;
+}
+interface Employee {
+  readonly id: number;
+  email: string;
+}
+interface Engineer extends Personnel, Employee {
+  level: string;
+  languages: string[];
+}
+const pierre: Engineer = {
+  name: "Pierre",
+  id: Math.floor(Math.random() * 1000),
+  email: "hello@gmail.com",
+  level: "senior",
+  languages: ["JS", "Python"],
+};
