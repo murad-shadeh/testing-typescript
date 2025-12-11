@@ -61,3 +61,17 @@ const elton: Dog = {
     return "Woof woof!";
   },
 };
+// Extending interfaces (inhert from other interface) by using the extends keyword
+interface ServiceDog extends Dog {
+  job: "drug sniffer" | "bomb" | "guide dog";
+}
+
+const chewy: ServiceDog = {
+  name: "Chewy",
+  age: 4.5,
+  breed: "labrador",
+  bark: () => {
+    return "bark!";
+  },
+  job: "guide dog",
+};
