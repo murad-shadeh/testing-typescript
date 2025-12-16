@@ -1,3 +1,4 @@
+"use strict";
 // // function square(num: number) {
 // //   return num * num;
 // // }
@@ -54,14 +55,13 @@
 // };
 // lecture 26
 // Excercise 1
-var twofer = function (name) {
-    if (name === void 0) { name = "you"; }
-    return "One for ".concat(name, ", one for me.");
+const twofer = (name = "you") => {
+    return `One for ${name}, one for me.`;
 };
 console.log(twofer("Murad"));
 console.log(twofer());
 // Excercise 2
-var isLeapYear = function (year) {
+const isLeapYear = (year) => {
     if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
         return true;
     }
